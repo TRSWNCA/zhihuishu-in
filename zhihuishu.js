@@ -21,12 +21,13 @@ async function begin() {
   let count = 0
 
   // 60s内获取播放列表，若失败，则插件不能使用
-  list = getElement('list')
+  //list = getElement('list')
+  list = document.getElementsByClassName('file-item')
   while (1) {
     if (list !== null || count >= 12) break
     count++
     await wait1s(5)
-    list = getElement('list')
+    list = document.getElementsByClassName('file-item')
   }
   if (list !== null) { // 播放下一集
     playVideo(list)
@@ -57,12 +58,19 @@ async function begin() {
  * @returns void
  */
 function playVideo(list) {
-  for (let i = 0, len = list.length; i < len; i++) {
-    let watchstate = list[i].getAttribute('watchstate')
-    let id = list[i].getAttribute('id')
-    // 视频没被播放过并且不是标题行
-    if ((watchstate === '0' || watchstate === '2') && id !== 'video-0') {
-      list[i].click() // 播放视频
+  list = document.getElementsByClassName('file-item')
+  title = document.getElementById('sourceTit')
+  console.log(title.innerText)
+  for (let i = 0; i < list.length; ++ i) {
+    try {
+      if (list[i].children[2].children[0].className != 'icon-finish')
+        throw("NO")
+    } catch {
+      console.log(list[i].innerText)
+      if (!list[i].innerText.includes(title.innerText.substring(0, title.innerText.lastIndexOf('.')))) {
+        console.log("开始播放：", list[i].innerText)
+        list[i].click()
+      }
       return true
     }
   }
