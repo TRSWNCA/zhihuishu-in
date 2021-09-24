@@ -1,9 +1,13 @@
 # 智慧树校内课程刷课插件
 
+**只适用于这种**： [preview](https://github.com/TRSWNCA/zhihuishu-in/blob/master/preview.png)
+
 有些课程需要完成校内视频的观看，不需要测试等但是效率不高，
 所以希望通过插件先完成绩效，若有需要可以自行查看视频或者PPT
 
 喜欢这个插件的话，请点右上角的 `star`，谢谢
+
+
 
 
 ## 一、功能和工具
