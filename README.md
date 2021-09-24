@@ -43,7 +43,7 @@
 - Q: 无法登录?  
 - A: 先登录智慧树，再开启本插件  
 - Q: 其他问题？  
-- A: email联系我吧：perhapszql@gmail.com。可我不一定能解决问题。  
+- A: email联系我吧：trswnca@yeah.net。可我不一定能解决问题。  
 
 ## 四、License
 
